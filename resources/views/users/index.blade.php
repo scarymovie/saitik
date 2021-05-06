@@ -7,7 +7,8 @@
         <title>User Profile</title>
 
         <!-- Google Font: Source Sans Pro -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
         <!-- Theme style -->
@@ -77,11 +78,14 @@
                                 </p>
                                 <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
                                     <div class="block mb-8">
-                                        <a href="{{ route('users.index') }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Add about</a>
+                                        <a href="{{ route('users.index') }}"
+                                           class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Add
+                                            about</a>
                                     </div>
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                            <a href="{{ route('users.edit', Auth::user()->id) }}" class="text-indigo-600 hover:text-indigo-900 mb-2 mr-2">Edit</a>
+                                            <a href="{{ route('users.edit', Auth::user()->id) }}"
+                                               class="text-indigo-600 hover:text-indigo-900 mb-2 mr-2">Edit</a>
                                         </td>
                                     </tr>
                                     <x-jet-section-border/>
@@ -107,7 +111,8 @@
 
                                 <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
 
-                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+                                    fermentum enim neque.</p>
                             </div>
                             <!-- /.card-body -->
                         </div>
@@ -118,7 +123,8 @@
                         <div class="card">
                             <div class="card-header p-2 col-md-12">
                                 <ul class="nav nav-pills">
-                                    <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Activity</a></li>
+                                    <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Activity</a>
+                                    </li>
                                 </ul>
                             </div><!-- /.card-header -->
                             <div class="card-body">
@@ -138,15 +144,19 @@
                                                 @csrf
                                                 <div class="shadow overflow-hidden sm:rounded-md">
                                                     <div class="px-4 py-5 bg-white sm:p-6">
-                                                        <input type="text" name="description" id="description" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                                               placeholder="введи что нибудь" />
+                                                        <input type="text" name="description" id="description"
+                                                               type="text"
+                                                               class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                                               placeholder="введи что нибудь"/>
                                                         @error('description')
                                                         <p class="text-sm text-red-600">{{ $message }}</p>
                                                         @enderror
                                                     </div>
 
-                                                    <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
-                                                        <button class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">
+                                                    <div
+                                                        class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
+                                                        <button
+                                                            class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">
                                                             Create
                                                         </button>
                                                     </div>
@@ -156,7 +166,8 @@
                                         <!-- /.post -->
                                         <div class="post">
                                             <div class="user-block">
-                                                <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg" alt="user image">
+                                                <img class="img-circle img-bordered-sm"
+                                                     src="../../dist/img/user1-128x128.jpg" alt="user image">
                                                 <span class="username">
                           <a href="#">{{Auth::user()->name}}</a>
                           <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
@@ -172,32 +183,41 @@
                                                 to Charlie Sheen fans.
                                             </p>
                                         </div>
-                                        <div class="post">
-                                            <div class="user-block">
-                                                <img class="img-circle img-bordered-sm" src="../../dist/img/user1-128x128.jpg" alt="user image">
-                                                <span class="username">
+                                        <!-- /.user-block -->
+                                        @if($userId = Auth::user()->id)
+                                            {{--{{dd(Auth::user()->posts)}}--}}
+                                            @foreach(Auth::user()->posts as $item)
+                                                <div class="post">
+                                                    <div class="user-block">
+                                                        <img class="img-circle img-bordered-sm"
+                                                             src="../../dist/img/user1-128x128.jpg" alt="user image">
+                                                        <span class="username">
                           <a href="#">{{Auth::user()->name}}</a>
                           <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
                         </span>
-                                                <span class="description">Shared publicly - 7:30 PM today</span>
-                                            </div>
-                                            <!-- /.user-block -->
-                                            <p>
-                                                      {{Auth::user()->posts}}
-                                            </p>
-                                        </div>
-
+                                                        <span class="description">Shared publicly - 7:30 PM today</span>
+                                                    </div>
+                                                    <ul>
+                                                        <li>{{$item->essence}}</li>
+                                                    </ul>
+                                                </div>
+                                            @endforeach
+                                        @endif
                                     </div>
-                                <!-- /.tab-content -->
-                            </div><!-- /.card-body -->
+
+                                    <!-- /.tab-content -->
+                                </div><!-- /.card-body -->
+
+                            </div>
+
+                            <!-- /.card -->
                         </div>
-                        <!-- /.card -->
+
+                        <!-- /.col -->
                     </div>
-                    <!-- /.col -->
+
+
                 </div>
-
-
-            </div>
 
         </section>
         <!-- /.content -->
