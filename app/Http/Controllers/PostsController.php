@@ -1,13 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Profile;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\User;
-use App\Models\UserProfile;
 use Illuminate\Http\Request;
 
-class UserProfileController extends Controller
+class PostsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +13,7 @@ class UserProfileController extends Controller
      */
     public function index()
     {
-        return view('users.index');
+        //
     }
 
     /**
@@ -46,7 +43,7 @@ class UserProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show($id)
     {
         //
     }
@@ -57,9 +54,9 @@ class UserProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
-        return view('users.edit', compact('user'));
+        //
     }
 
     /**
@@ -69,14 +66,9 @@ class UserProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
-        /*$user->update($request->validated());*/
-/*        $user = new User();*/
-        $user->about=$request->about;
-//        dd($user);
-        $user->save();
-        return redirect()->route('users.index');
+        //
     }
 
     /**

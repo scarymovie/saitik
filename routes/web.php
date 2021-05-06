@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\UsersController;
@@ -27,3 +28,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::resource('tasks', TaskController::class);
 Route::resource('users', UserProfileController::class);
 Route::resource('news', NewsController::class);
+Route::resource('posts', PostsController::class);
