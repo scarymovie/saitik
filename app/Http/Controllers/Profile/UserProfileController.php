@@ -16,7 +16,13 @@ class UserProfileController extends Controller
      */
     public function index()
     {
-        return view('users.index');
+        if (\Auth::check()){
+            return view('users.index');
+        }
+        else {
+            return view('auth.login');
+        }
+
     }
 
     /**
@@ -48,8 +54,12 @@ class UserProfileController extends Controller
      */
     public function show(User $user)
     {
-        //
+        $lists = User::all();
+        return view('users.list', compact('lists'));
     }
+
+
+
 
     /**
      * Show the form for editing the specified resource.

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PostsController extends Controller
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -43,9 +43,13 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($userId)
     {
-        //
+        $posts = Post::query()
+            ->where('user_id', $userId)
+            ->get();
+        return view('users.index',['posts'=>$posts,
+            'user_id'=>$userId]);
     }
 
     /**

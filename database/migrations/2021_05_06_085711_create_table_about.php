@@ -14,7 +14,8 @@ class CreateTableAbout extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('about', 255);
+            $table->string('about', 255)
+            ->nullable(true);
         });
     }
 
