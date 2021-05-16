@@ -30,3 +30,5 @@ Route::resource('users', UserProfileController::class);
 Route::resource('news', NewsController::class);
 Route::resource('posts', PostController::class);
 Route::resource('find',FriendController::class);
+Route::get('/search',[FriendController::class, 'show'])
+->name('search');

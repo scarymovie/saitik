@@ -45,9 +45,15 @@ class FriendController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+        $search = $request->get('search');
+        $show = User::where('name','LIKE',"%{$search}%")->get();
+        //dd($search);
+        //dd($show);
+
+        return view('friend.show',compact('show'));
+
     }
 
     /**
