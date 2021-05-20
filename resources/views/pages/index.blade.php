@@ -10,9 +10,9 @@
         <link rel="stylesheet"
               href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+        <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
         <!-- Theme style -->
-        <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+        <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
     </head>
     <body class="hold-transition sidebar-mini">
 
@@ -44,7 +44,7 @@
                             <div class="card-body box-profile">
                                 <div class="text-center">
                                     <img class="profile-user-img img-fluid img-circle"
-                                         src="../../dist/img/user4-128x128.jpg"
+                                         src="{{asset('dist/img/user4-128x128.jpg')}}"
                                          alt="User profile picture">
                                 </div>
 
@@ -133,7 +133,7 @@
                                         <div class="post">
                                             <div class="user-block">
                                                 <img class="img-circle img-bordered-sm"
-                                                     src="../../dist/img/user1-128x128.jpg" alt="user image">
+                                                     src="{{asset('dist/img/user1-128x128.jpg')}}" alt="user image">
                                                 <span class="username">
                           {{--<a href="#">{{Auth::user()->name}}</a>--}}
                         </span>
@@ -154,7 +154,7 @@
                                                 <div class="post">
                                                     <div class="user-block">
                                                         <img class="img-circle img-bordered-sm"
-                                                             src="../../dist/img/user1-128x128.jpg" alt="user image">
+                                                             src="{{asset('dist/img/user1-128x128.jpg')}}" alt="user image">
                                                         <span class="username">
                           <a href="#">{{$page->name}}</a>
                           <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>

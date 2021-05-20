@@ -10,9 +10,9 @@
         <link rel="stylesheet"
               href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
         <!-- Font Awesome -->
-        <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+        <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
         <!-- Theme style -->
-        <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+        <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
     </head>
     <body class="hold-transition sidebar-mini">
 
@@ -45,14 +45,14 @@
                             <div class="card-body box-profile">
                                 <div class="text-center">
                                     <img class="profile-user-img img-fluid img-circle"
-                                         src="../../dist/img/user4-128x128.jpg"
+                                         src="{{asset('dist/img/user4-128x128.jpg')}}"
                                          alt="User profile picture">
                                 </div>
 
                                 <h3 class="profile-username text-center">{{Auth::user()->name}}</h3>
 
                                 <p class="text-muted text-center">Software Engineer</p>
-
+//friends
                                 {{--<ul class="list-group list-group-unbordered mb-3">
                                     <li class="list-group-item">
                                         <b>Friends</b> <a class="float-right">13,287</a>
@@ -168,7 +168,7 @@
                                         <div class="post">
                                             <div class="user-block">
                                                 <img class="img-circle img-bordered-sm"
-                                                     src="../../dist/img/user1-128x128.jpg" alt="user image">
+                                                     src="{{asset('dist/img/user1-128x128.jpg')}}" alt="user image">
                                                 <span class="username">
                           <a href="#">{{Auth::user()->name}}</a>
                           <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
@@ -190,7 +190,7 @@
                                                 <div class="post">
                                                     <div class="user-block">
                                                         <img class="img-circle img-bordered-sm"
-                                                             src="../../dist/img/user1-128x128.jpg" alt="user image">
+                                                             src="{{asset('dist/img/user1-128x128.jpg')}}" alt="user image">
                                                         <span class="username">
                           <a href="#">{{Auth::user()->name}}</a>
                           <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
@@ -234,13 +234,13 @@
     <!-- ./wrapper -->
 
     <!-- jQuery -->
-    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
     <!-- Bootstrap 4 -->
-    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- AdminLTE App -->
-    <script src="../../dist/js/adminlte.min.js"></script>
+    <script src="{{asset('dist/js/adminlte.min.js')}}"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="../../dist/js/demo.js"></script>
+    <script src="{{asset('dist/js/demo.js')}}"></script>
     </body>
     </html>
 
