@@ -186,7 +186,6 @@
                                         </div>
                                         <!-- /.user-block -->
                                         @if($userId = Auth::user()->id)
-                                            {{--{{dd(Auth::user()->posts)}}--}}
                                             @foreach(Auth::user()->posts as $item)
                                                 <div class="post">
                                                     <div class="user-block">

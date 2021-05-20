@@ -6,6 +6,7 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\NewsController;
 use \App\Http\Controllers\Profile\UserProfileController;
 use App\Http\Controllers\FriendController;
+use App\Http\Controllers\PageController;
 
 
 /*
@@ -30,3 +31,5 @@ Route::resource('users', UserProfileController::class);
 Route::resource('news', NewsController::class);
 Route::resource('posts', PostController::class);
 Route::resource('find',FriendController::class);
+Route::resource('page', PageController::class);
+Route::get('/pageuser/{userid}',[\App\Http\Controllers\TestPageController::class, 'index'])->name('page.index');

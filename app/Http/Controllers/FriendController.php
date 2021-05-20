@@ -36,6 +36,10 @@ class FriendController extends Controller
      */
     public function store(Request $request)
     {
+     //
+    }
+
+    public function page(User $user){
         //
     }
 
@@ -48,9 +52,7 @@ class FriendController extends Controller
     public function show(Request $request)
     {
         $search = $request->get('search');
-        $show = User::where('name','LIKE',"%{$search}%")->get();
-        //dd($search);
-        //dd($show);
+        $show = User::where('name','LIKE',"%{$search}%")->get() ;
 
         return view('friend.show',compact('show'));
 

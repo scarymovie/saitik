@@ -65,4 +65,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class);
     }
+
+    public function getByUserId(int $user_id){
+return static::query()
+    ->with(['user'])
+    ->get();
+    }
 }
