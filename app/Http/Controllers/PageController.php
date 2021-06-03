@@ -14,8 +14,8 @@ class PageController extends Controller
      */
     public function index()
     {
-        $pages =User::all();
-        return view('pages.index',compact('pages'));
+       /* $pages =User::all();*/
+        return view('pages.index'/*,compact('pages')*/);
     }
 
 /*    public function getPage($userId)

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            News List
+            Новости
         </h2>
     </x-slot>
     @if (Route::has('login'))

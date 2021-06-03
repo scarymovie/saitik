@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>User page</title>
+        <title>Страница пользователя</title>
 
         <!-- Google Font: Source Sans Pro -->
         <link rel="stylesheet"
@@ -24,10 +24,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Profile</h1>
-                    </div>
-                    <div class="col-sm-6">
-
+                        <h1>Профиль</h1>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -44,13 +41,11 @@
                             <div class="card-body box-profile">
                                 <div class="text-center">
                                     <img class="profile-user-img img-fluid img-circle"
-                                         src="{{asset('dist/img/user4-128x128.jpg')}}"
+                                         src="https://upload.wikimedia.org/wikipedia/ru/1/15/Logo_MarGTU.png"
                                          alt="User profile picture">
                                 </div>
-
-                                {{$page->name}}
-
-                                <p class="text-muted text-center">Software Engineer</p>
+                                <p class="text-center">{{$page->name}}</p>
+                                <p class="text-muted text-center">Статус</p>
                             </div>
                             <!-- /.card-body -->
                         </div>
@@ -59,51 +54,23 @@
                         <!-- About Me Box -->
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">About Me</h3>
+                                <h3 class="card-title">Обо мне</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
-                                <strong><i class="fas fa-book mr-1"></i>Education</strong>
-
-                                <p class="text-muted">
+                                <strong><i class="fas fa-book mr-1"></i>Образование</strong>
+                                <p>
                                     {{$page->about}}
                                 </p>
-                                <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-                                    <div class="block mb-8">
-                                        <a href="#"
-                                           class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Add
-                                            about</a>
-                                    </div>
-                                    <tr>
-                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                            <a href="#"class="text-indigo-600 hover:text-indigo-900 mb-2 mr-2">Edit</a>
-                                        </td>
-                                    </tr>
-                                    <x-jet-section-border/>
-                                </div>
-
-                                <strong><i class="fas fa-map-marker-alt mr-1"></i> Location</strong>
-
-                                <p class="text-muted">Malibu, California</p>
-
                                 <hr>
-
-                                <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
-
-                                <p class="text-muted">
-                                    <span class="tag tag-danger">UI Design</span>
-                                    <span class="tag tag-success">Coding</span>
-                                    <span class="tag tag-info">Javascript</span>
-                                    <span class="tag tag-warning">PHP</span>
-                                    <span class="tag tag-primary">Node.js</span>
+                                <strong><i class="fas fa-map-marker-alt mr-1"></i>Местонахождение</strong>
+                                <p>Йошкар-Ола</p>
+                                <hr>
+                                <strong><i class="fas fa-pencil-alt mr-1"></i>Навыки</strong>
+                                <p>
+                                    <span class="tag tag-danger">Юмор</span>
                                 </p>
-
                                 <hr>
-
-                                <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
-
-                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                                    fermentum enim neque.</p>
                             </div>
                             <!-- /.card-body -->
                         </div>
@@ -124,29 +91,10 @@
                                         <!-- Post -->
                                         <div class="post">
                                             <div class="user-block">
-                                                <span class="username">
+                                                <span class="username"></span>
                                             </div>
                                             <!-- /.user-block -->
 
-                                        </div>
-                                        <!-- /.post -->
-                                        <div class="post">
-                                            <div class="user-block">
-                                                <img class="img-circle img-bordered-sm"
-                                                     src="{{asset('dist/img/user1-128x128.jpg')}}" alt="user image">
-                                                <span class="username">
-                          {{--<a href="#">{{Auth::user()->name}}</a>--}}
-                        </span>
-                                                <span class="description">Shared publicly - 7:30 PM today</span>
-                                            </div>
-                                            <!-- /.user-block -->
-                                            <p>
-                                                Lorem ipsum represents a long-held tradition for designers,
-                                                typographers and the like. Some people hate it and argue for
-                                                its demise, but others ignore the hate as they create awesome
-                                                tools to help create filler text for everyone from bacon lovers
-                                                to Charlie Sheen fans.
-                                            </p>
                                         </div>
                                         <!-- /.user-block -->
                                         @if($userId = $page->id)
@@ -154,12 +102,10 @@
                                                 <div class="post">
                                                     <div class="user-block">
                                                         <img class="img-circle img-bordered-sm"
-                                                             src="{{asset('dist/img/user1-128x128.jpg')}}" alt="user image">
+                                                             src="https://upload.wikimedia.org/wikipedia/ru/1/15/Logo_MarGTU.png" alt="user image">
                                                         <span class="username">
-                          <a href="#">{{$page->name}}</a>
-                          <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
-                        </span>
-                                                        <span class="description">Shared publicly - 7:30 PM today</span>
+                          <a href="#">{{$page->name}}</a>                        </span>
+                                                        <span class="description">Запись сделана в - 7:30 PM today</span>
                                                     </div>
                                                     <ul>
                                                         <li>{{$item->essence}}</li>
