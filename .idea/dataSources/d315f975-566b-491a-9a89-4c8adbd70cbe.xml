@@ -1386,17 +1386,21 @@ tokenable_id</ColNames>
       <Position>13</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <index id="383" parent="310" name="users_email_unique">
+    <column id="383" parent="310" name="birth">
+      <Position>14</Position>
+      <DataType>int(11)|0s</DataType>
+    </column>
+    <index id="384" parent="310" name="users_email_unique">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="384" parent="310" name="PRIMARY">
+    <key id="385" parent="310" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="385" parent="310" name="users_email_unique">
+    <key id="386" parent="310" name="users_email_unique">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
     </key>

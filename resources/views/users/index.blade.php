@@ -68,8 +68,8 @@
                                     {{Auth::user()->about}}
                                 </p>
                                 <hr>
-                                <strong><i class="fas fa-map-marker-alt mr-1"></i>Местонахождение</strong>
-                                <p>Йошкар-ола</p>
+                                <strong><i class="fas fa-map-marker-alt mr-1"></i>Год рождения</strong>
+                                <p>{{Auth::user()->birth}}</p>
                                 <hr>
                                 <strong><i class="fas fa-pencil-alt mr-1"></i>Навыки</strong>
                                 <p>
