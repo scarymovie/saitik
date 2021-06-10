@@ -109,7 +109,7 @@
                                                 @csrf
                                                 <div class="shadow overflow-hidden sm:rounded-md">
                                                     <div class="px-4 py-5 bg-white sm:p-6">
-                                                        <input type="text" name="description" id="description"
+                                                        <input type="text" name="essence" id="description"
                                                                type="text"
                                                                class="form-input rounded-md shadow-sm mt-1 block w-full"
                                                                placeholder="введи что нибудь"/>
@@ -122,7 +122,7 @@
                                                         class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
                                                         <button
                                                             class="inline-flex items-center px-4 py-2 bg-gray-800 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:shadow-outline-gray disabled:opacity-25 transition ease-in-out duration-150">
-                                                            Create
+                                                            Опубликовать
                                                         </button>
                                                     </div>
                                                 </div>
@@ -137,9 +137,8 @@
                                                              src="https://upload.wikimedia.org/wikipedia/ru/1/15/Logo_MarGTU.png" alt="user image">
                                                         <span class="username">
                           <a href="#">{{Auth::user()->name}}</a>
-                          <a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>
+                          {{--<a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>//кнопка удалить--}}
                         </span>
-                                                        <span class="description">Shared publicly - 7:30 PM today</span>
                                                     </div>
                                                     <ul>
                                                         <li>{{$item->essence}}</li>
