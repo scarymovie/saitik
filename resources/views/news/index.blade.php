@@ -7,12 +7,11 @@
     @if (Route::has('login'))
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
             @auth
-                <a href="{{ url('/home') }}" class="text-sm text-gray-700 underline">Home</a>
             @else
-                <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
+                <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Выйти</a>
 
                 @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Регистрация</a>
                 @endif
             @endauth
         </div>
@@ -28,7 +27,7 @@
                                 <thead>
                                 <tr>
                                     <th scope="col" class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        Description
+                                        Новости
                                     </th>
                                     <th scope="col" width="200" class="px-6 py-3 bg-gray-50">
 
@@ -43,7 +42,7 @@
                                         </td>
 
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                                            <a href="{{ route('news.show', $item->id) }}" class="text-blue-600 hover:text-blue-900 mb-2 mr-2">View</a>
+                                            <a href="{{ route('news.show', $item->id) }}" class="text-blue-600 hover:text-blue-900 mb-2 mr-2"><Открыть></Открыть></a>
                                         </td>
                                     </tr>
                                 @endforeach

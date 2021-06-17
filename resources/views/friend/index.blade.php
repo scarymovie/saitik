@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <h2 style="margin-left:75px;"class="font-semibold text-xl text-gray-800 leading-tight">
             Пользователи
         </h2>
     </x-slot>
@@ -18,7 +18,7 @@
                                         <input type="text" name="search" id="search"
                                                type="text"
                                                class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                               placeholder="введи имя"/>
+                                               placeholder="Введите имя пользователя"/>
                                         @error('description')
                                         <p class="text-sm text-red-600">{{ $message }}</p>
                                         @enderror
@@ -51,7 +51,7 @@
                                 @foreach ($MayFriends as $mayfriend)
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                                            {{$mayfriend->id }}
+                                           {{$mayfriend->id }}
                                         </td>
                                         @php
                                         $url = route('page.index',['userid'=>$mayfriend->id])

@@ -34,8 +34,8 @@
                             <div class="card-body box-profile">
                                 <div class="text-center">
                                     <img class="profile-user-img img-fluid img-circle"
-                                         src="https://upload.wikimedia.org/wikipedia/ru/1/15/Logo_MarGTU.png"
-                                         alt="User profile picture">
+                                         src="{{ $page->profile_photo_url }}"
+                                         alt="{{ $page->name }}">
                                 </div>
                                 <p class="text-center">{{$page->name}}</p>
                                 <p class="text-muted text-center">Статус</p>
@@ -94,8 +94,9 @@
                                             @foreach($page->posts as $item)
                                                 <div class="post">
                                                     <div class="user-block">
-                                                        <img class="img-circle img-bordered-sm"
-                                                             src="https://upload.wikimedia.org/wikipedia/ru/1/15/Logo_MarGTU.png" alt="user image">
+                                                        <img class="profile-user-img img-fluid img-circle"
+                                                             src="{{ $page->profile_photo_url }}"
+                                                             alt="{{ $page->name }}">
                                                         <span class="username">
                           <a href="#">{{$page->name}}</a>                        </span>
                                                         <span class="description">Запись сделана в - 7:30 PM today</span>

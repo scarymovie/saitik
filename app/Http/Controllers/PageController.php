@@ -14,8 +14,8 @@ class PageController extends Controller
      */
     public function index()
     {
-       /* $pages =User::all();*/
-        return view('pages.index'/*,compact('pages')*/);
+        $photo = User::query()->select('profile_photo_path')->get();
+        return view('pages.index',compact('photo'));
     }
 
 /*    public function getPage($userId)

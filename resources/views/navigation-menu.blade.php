@@ -144,7 +144,7 @@
                                 <x-jet-dropdown-link href="{{ route('logout') }}"
                                                      onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                    {{ __('Log Out') }}
+                                    {{ __('Выйти') }}
                                 </x-jet-dropdown-link>
                             </form>
                         </x-slot>
@@ -196,7 +196,7 @@
                 <!-- Account Management -->
                 <x-jet-responsive-nav-link href="{{ route('profile.show') }}"
                                            :active="request()->routeIs('profile.show')">
-                    {{ __('Profile') }}
+                    {{ __('Профиль') }}
                 </x-jet-responsive-nav-link>
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())

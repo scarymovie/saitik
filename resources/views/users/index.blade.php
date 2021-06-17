@@ -19,7 +19,7 @@
 
 
     <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+    <div class="content-wrapper" style="background-color:#EDEEF0;">
         <!-- Content Header (Page header) -->
         <section class="content-header">
 
@@ -36,14 +36,15 @@
                             <div class="card-body box-profile">
                                 <div class="text-center">
                                     <img class="profile-user-img img-fluid img-circle"
-                                         src="https://upload.wikimedia.org/wikipedia/ru/1/15/Logo_MarGTU.png"
-                                         alt="User profile picture">
+                                         src="{{ Auth::user()->profile_photo_url }}"
+                                         alt="{{ Auth::user()->name }}">
                                 </div>
 
                                 <h3 class="profile-username text-center">{{Auth::user()->name}}</h3>
 
-                                <p class="text-muted text-center">Статус</p>
-{{--friends--}}
+                                <p class="text-muted text-center">Статус:</p>
+
+                                {{--friends--}}
                                 {{--<ul class="list-group list-group-unbordered mb-3">
                                     <li class="list-group-item">
                                         <b>Friends</b> <a class="float-right">13,287</a>
@@ -64,19 +65,21 @@
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <strong><i class="fas fa-book mr-1"></i>Образование</strong>
-                                <p>
+                                <p style="margin-left:5px">
                                     {{Auth::user()->about}}
                                 </p>
                                 <hr>
                                 <strong><i class="fas fa-map-marker-alt mr-1"></i>Год рождения</strong>
-                                <p>{{Auth::user()->birth}}</p>
+                                <p style="margin-left:5px">{{Auth::user()->birth}}</p>
                                 <hr>
                                 <strong><i class="fas fa-pencil-alt mr-1"></i>Навыки</strong>
-                                <p>
+                                <p style="margin-left:5px">
                                     <span class="tag tag-danger">Юмор</span>
                                 </p>
                                 <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-                                    <a class="btn btn-outline-success" href="{{ route('users.edit', Auth::user()->id) }}" role="button">Изменить</a>
+                                    <a class="btn btn-outline-success"
+                                       href="{{ route('users.edit', Auth::user()->id) }}"
+                                       role="button">Редактировать</a>
                                 </div>
                             </div>
                             <!-- /.card-body -->
@@ -88,7 +91,8 @@
                         <div class="card">
                             <div class="card-header p-2 col-md-12">
                                 <ul class="nav nav-pills">
-                                    <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Мои записи</a>
+                                    <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Мои
+                                            записи</a>
                                     </li>
                                 </ul>
                             </div><!-- /.card-header -->
@@ -103,7 +107,7 @@
                                             <!-- /.user-block -->
 
                                             <form method="post" action="{{ route('posts.store') }}">
-                                                <p>
+                                                <p style="margin-left:10px">
                                                     Что нового?
                                                 </p>
                                                 @csrf
@@ -112,7 +116,7 @@
                                                         <input type="text" name="essence" id="description"
                                                                type="text"
                                                                class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                                               placeholder="введи что нибудь"/>
+                                                               placeholder=""/>
                                                         @error('description')
                                                         <p class="text-sm text-red-600">{{ $message }}</p>
                                                         @enderror
@@ -133,12 +137,17 @@
                                             @foreach(Auth::user()->posts as $item)
                                                 <div class="post">
                                                     <div class="user-block">
-                                                        <img class="img-circle img-bordered-sm"
-                                                             src="https://upload.wikimedia.org/wikipedia/ru/1/15/Logo_MarGTU.png" alt="user image">
+                                                        <img class="profile-user-img img-fluid img-circle"
+                                                             src="{{ Auth::user()->profile_photo_url }}"
+                                                             alt="{{ Auth::user()->name }}">
                                                         <span class="username">
-                          <a href="#">{{Auth::user()->name}}</a>
-                          {{--<a href="#" class="float-right btn-tool"><i class="fas fa-times"></i></a>//кнопка удалить--}}
-                        </span>
+                                                            <a href="#">{{Auth::user()->name}}</a>
+                                                            <form class="inline-block"  action="{{ route('posts.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Вы уверены?');">
+                                                                <input type="hidden" name="_method" value="DELETE">
+                                                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                                <input type="submit" style="margin-left:1300%"  class="text-red-600 hover:text-red-900 mb-2 mr-2" value="Удалить">
+                                                            </form>
+                                                         </span>
                                                     </div>
                                                     <ul>
                                                         <li>{{$item->essence}}</li>
@@ -162,6 +171,7 @@
 
                 </div>
 
+            </div>
         </section>
         <!-- /.content -->
     </div>
