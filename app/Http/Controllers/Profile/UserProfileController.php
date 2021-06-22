@@ -53,8 +53,7 @@ class UserProfileController extends Controller
      */
     public function show(User $user)
     {
-        $lists = User::all();
-        return view('users.list', compact('lists'));
+        //
     }
 
 
@@ -80,10 +79,8 @@ class UserProfileController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        /*$user->update($request->validated());*/
-/*        $user = new User();*/
+        $user->birth=$request->birth;
         $user->about=$request->about;
-//        dd($user);
         $user->save();
         return redirect()->route('users.index');
     }

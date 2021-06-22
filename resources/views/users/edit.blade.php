@@ -19,6 +19,12 @@
                             @error('about')
                             <p class="text-sm text-red-600">{{$message }}</p>
                             @enderror
+                            <label for="birth" class="block font-medium text-sm text-gray-700">Год рождения</label>
+                            <input type="text" name="birth" id="birth" type="hidden" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('birth', Auth::user()->birth) }}" />
+                            @error('about')
+                            <p class="text-sm text-red-600">{{$message }}</p>
+                            @enderror
                         </div>
 
                         <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">
