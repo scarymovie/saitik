@@ -1611,17 +1611,21 @@ tokenable_id</ColNames>
       <Position>14</Position>
       <DataType>int|0s</DataType>
     </column>
-    <index id="377" parent="303" name="users_email_unique">
+    <column id="377" parent="303" name="skills">
+      <Position>15</Position>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <index id="378" parent="303" name="users_email_unique">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="378" parent="303" name="PRIMARY">
+    <key id="379" parent="303" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="379" parent="303" name="users_email_unique">
+    <key id="380" parent="303" name="users_email_unique">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
     </key>

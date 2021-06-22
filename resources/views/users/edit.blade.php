@@ -25,6 +25,12 @@
                             @error('about')
                             <p class="text-sm text-red-600">{{$message }}</p>
                             @enderror
+                            <label for="skills" class="block font-medium text-sm text-gray-700">Навыки</label>
+                            <input type="text" name="skills" id="skills" type="hidden" class="form-input rounded-md shadow-sm mt-1 block w-full"
+                                   value="{{ old('skills', Auth::user()->skills) }}" />
+                            @error('skills')
+                            <p class="text-sm text-red-600">{{$message }}</p>
+                            @enderror
                         </div>
 
                         <div class="flex items-center justify-end px-4 py-3 bg-gray-50 text-right sm:px-6">

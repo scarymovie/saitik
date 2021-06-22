@@ -81,6 +81,7 @@ class UserProfileController extends Controller
     {
         $user->birth=$request->birth;
         $user->about=$request->about;
+        $user->skills=$request->skills;
         $user->save();
         return redirect()->route('users.index');
     }

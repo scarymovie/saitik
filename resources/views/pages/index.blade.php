@@ -52,16 +52,14 @@
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <strong><i class="fas fa-book mr-1"></i>Образование</strong>
-                                <p>
-                                    {{$page->about}}
-                                </p>
+                                <p>{{$page->about}}</p>
                                 <hr>
                                 <strong><i class="fas fa-map-marker-alt mr-1"></i>Год рождения</strong>
                                 <p>{{$page->birth}}</p>
                                 <hr>
                                 <strong><i class="fas fa-pencil-alt mr-1"></i>Навыки</strong>
                                 <p>
-                                    <span class="tag tag-danger">Юмор</span>
+                                    <span class="tag tag-danger">{{$page->skills}}</span>
                                 </p>
                                 <hr>
                             </div>

@@ -74,7 +74,7 @@
                                 <hr>
                                 <strong><i class="fas fa-pencil-alt mr-1"></i>Навыки</strong>
                                 <p style="margin-left:5px">
-                                    <span class="tag tag-danger">Юмор</span>
+                                    <span class="tag tag-danger">{{Auth::user()->skills}}</span>
                                 </p>
                                 <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
                                     <a class="btn btn-outline-success"
