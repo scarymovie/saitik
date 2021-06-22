@@ -76,6 +76,7 @@
                                 <p style="margin-left:5px">
                                     <span class="tag tag-danger">{{Auth::user()->skills}}</span>
                                 </p>
+                                <hr>
                                 <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
                                     <a class="btn btn-outline-success"
                                        href="{{ route('users.edit', Auth::user()->id) }}"
