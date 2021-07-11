@@ -37,7 +37,7 @@ return [
 
         'photos' =>[
             'driver' =>'local',
-            'root' => storage_path('app/public/profile-photos'),
+            'root' => storage_path('app/public/'),
         ],
 
         'public' => [
